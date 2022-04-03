@@ -1,12 +1,10 @@
-
 <p>USER INFO</p>
 
-<ul *ngFor="let element of data">
-<li><button (click)="getUserInfoFromAPI()">{{element.id}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{element.name}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{element.email}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{element.adress}}</button></li>
+<ul >
+<li><button (click)="getUserInfoFromAPI()">{{user.id}}</button></li>
+<li><button (click)="getUserInfoFromAPI()">{{user.name}}</button></li>
+<li><button (click)="getUserInfoFromAPI()">{{user.email}}</button></li>
+<li><button (click)="getUserInfoFromAPI()">{{user.adress}}</button></li>
 </ul>
 
 <button ><a hrer="#" routerLink="/userposts" routerLinkActive="actvie">POSTS</a></button>
- 

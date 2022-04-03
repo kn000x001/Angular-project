@@ -1,34 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { JSONPlaceholderpostsService } from 'src/app/posts/jsonplaceholderposts.service';
+import { ActivatedRoute } from '@angular/router';
+import { JSONPlaceholderpostsService } from '../posts/jsonplaceholderposts.service';
 
 
 @Component({
   selector: 'app-userinfo',
   templateUrl: './userinfo.component.html',
-  styleUrls: ['./userinfo.component.css']
+  styleUrls: ['./userinfo.component.css'],
 })
 export class UserinfoComponent implements OnInit {
+  user: any = '';
 
-  data:Array<any>
-
-  constructor(private JSONPlaceholder: JSONPlaceholderpostsService,){
-    this.data = new Array<any>()
+  constructor(private JSONPlaceholder: JSONPlaceholderpostsService, private route: ActivatedRoute) {
+    
   }
   ngOnInit(): void {
-    this.getUserInfoFromAPI()
+    this.getUserInfoFromAPI();
   }
-  
-  getUserInfoFromAPI(){
+
+  getUserInfoFromAPI() {
     this.JSONPlaceholder.getData().subscribe((data) => {
-      console.log(data)
-      this.data = data
-    })
+      const userID = this.route.snapshot.paramMap.get('id') || "";
+
+      this.user = data.filter((user: { id: number; }) => user.id == parseInt(userID));
+    });
   }
-
-  
-  
-
-
-
-
 }
+  
+
+  
+  
+
+
+
+
+
