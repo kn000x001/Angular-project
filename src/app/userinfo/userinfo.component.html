@@ -1,10 +1,23 @@
-<p>USER INFO</p>
-
+<p class="user-page-header">USER INFO</p>
+<div class="user-info-box">
 <ul >
-<li><button (click)="getUserInfoFromAPI()">{{user.id}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{user.name}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{user.email}}</button></li>
-<li><button (click)="getUserInfoFromAPI()">{{user.adress}}</button></li>
+<li (click)="getUserInfoFromAPI()"><P>ID:</P> <p>{{user.id}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>FULL NAME:</P> <p>{{user.name}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>USERNAME:</P> <p>{{user.username}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>EMAIL:</P> <p>{{user.email}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>CITY:</P> <p>{{user.address.city}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>STREET:</P> <p>{{user.address.street}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>SUITE:</P> <p>{{user.address.suite}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>ZIPCODE:</P> <p>{{user.address.zipcode}}</p></li>
 </ul>
 
-<button ><a hrer="#" routerLink="/userposts" routerLinkActive="actvie">POSTS</a></button>
+<ul>
+<li (click)="getUserInfoFromAPI()"><P>PHONE:</P> <p>{{user.phone}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>WEBSITE:</P> <p>{{user.website}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>COMPANY:</P> <p>{{user.company.name}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>COMPANY CATCHPHRASE:</P> <p>{{user.company.catchPhrase}}</p></li>
+<li (click)="getUserInfoFromAPI()"><P>COMPANY BS:</P> <p>{{user.company.bs}}</p></li>
+</ul>
+</div>
+
+<a><button class="user-posts-button" hrer="#" routerLink="/userposts" routerLinkActive="actvie">{{user.username}}s POSTS</button></a>

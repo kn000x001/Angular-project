@@ -2,7 +2,7 @@
 <h1>USERS LIST</h1>
 
 
-<ul *ngFor="let d of data">
+<ul *ngFor="let d of data" class="users-list">
 
     <li><button (click)="getDataFromAPI()" ><a hrer="#" [routerLink]="['/userinfo', d.name]">{{d.name}}</a></button></li>
   </ul>

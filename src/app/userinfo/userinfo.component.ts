@@ -22,7 +22,7 @@ export class UserinfoComponent implements OnInit {
     this.JSONPlaceholder.getData().subscribe((data) => {
       const userID = this.route.snapshot.paramMap.get('id') || "";
 
-      this.user = data.filter((user: { id: number; }) => user.id == parseInt(userID));
+      [this.user] = data.filter((user) => user.name == userID);
     });
   }
 }

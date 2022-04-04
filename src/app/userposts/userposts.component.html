@@ -1,4 +1,4 @@
-<ul *ngFor="let d of data">
+<ul *ngFor="let d of data" class="users-posts">
 
-    <li><button (click)="getPostsFromAPI()">{{d.body}}</button></li>
+    <li (click)="getPostsFromAPI()"><p>{{d.body}}</p></li>
   </ul>
