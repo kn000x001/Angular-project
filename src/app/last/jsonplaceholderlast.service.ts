@@ -11,7 +11,8 @@ export class JSONPlaceholderlastService {
 
   getData():Observable<any> {
 
-    const url = "https://jsonplaceholder.typicode.com/comments?postId=1"
+    // this is the url code connecting the programme to the data in the JSONPlacehoder, it is specified for the users posts.
+    const url = "https://jsonplaceholder.typicode.com/posts"
 return this.http.get<any>(url)
   }
 

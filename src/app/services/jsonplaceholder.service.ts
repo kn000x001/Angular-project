@@ -14,6 +14,8 @@ export class JSONPlaceholderService {
 
   getData():Observable<any> {
 
+// this is the url code connecting the programme to the data in the JSONPlacehoder, it is specified for the users list.
+
     const url = "https://jsonplaceholder.typicode.com/users"
 return this.http.get<any>(url)
   }
